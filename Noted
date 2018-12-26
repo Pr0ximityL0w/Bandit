@@ -1,0 +1,20 @@
+---
+
+6:11:47 PM	xor  I may not be able to pin a specific TTY to a user
+6:11:59 PM	xor  but that doesn't stop grepping /dev/pts for the tty owned by a user
+6:12:09 PM	xor  bandit4@melinda:~$ ls -alh /dev/pts/* | grep bandit4
+6:12:11 PM	xor  crw--w---- 1 bandit4    tty  136,  6 May  4 01:10 /dev/pts/6
+6:12:11 PM	xor  crw--w---- 1 bandit4    tty  136,  8 May  4 01:06 /dev/pts/8
+6:12:37 PM	xor  and considering my TTY is 6, and you're still on bandit4, pts/8 must be you!
+
+6:30:50 PM	DangerClose  echo "Boo!" > /dev/pts/6
+
+---
+
+Python quick encode (same to decode but use codecs.decode)
+
+import codecs
+codecs.encode('foobar', 'rot_13')
+>> 'sbbone'
+
+---
